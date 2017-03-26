@@ -5457,3 +5457,53 @@ Processing by UsuarioController#show as JSON
 Completed 200 OK in 28ms (Views: 8.0ms | ActiveRecord: 3.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-03-26 09:49:48 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 13ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-26 09:49:51 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (3.9ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-26 09:50:35 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 748ms (Views: 740.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuario" for 127.0.0.1 at 2017-03-26 09:50:45 -0300
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/vive-la-apicultura/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#index as JSON
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+[active_model_serializers]   [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT id,nombre,apellido,usuario,twitter FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.55ms)
+Completed 200 OK in 18ms (Views: 9.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-26 09:50:52 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 404 Not Found in 4ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/usuario/5" for 127.0.0.1 at 2017-03-26 09:50:56 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.7ms)
+
+
