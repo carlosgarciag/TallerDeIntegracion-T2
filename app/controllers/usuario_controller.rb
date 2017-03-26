@@ -9,7 +9,7 @@ class UsuarioController < ApplicationController
   end
 
   def index
-    @users = Usuario.all
+    @users = Usuario.all.select('id,nombre,apellido,usuario,twitter')
     total = Usuario.all.count
     render json: {usuarios: @users, total: total}, status: 200
   end
@@ -23,6 +23,7 @@ class UsuarioController < ApplicationController
       render json: { error: 'id no es modificable' }, status: 400
     else
       if @user.update_attributes(usuario_params)
+        @user = Usuario.select('id, nombre, apellido, usuario, twitter').find(params[:id])
         render json: @user, status: 200
       else
         case status
@@ -42,7 +43,7 @@ class UsuarioController < ApplicationController
       if(params.has_key?(:usuario)&& params.has_key?(:nombre))
         @newUser = Usuario.new(usuario_params)
         if @newUser.save
-          render json: @newUser, status: 200
+          render json: {id: @newUser.id, nombre: @newUser.nombre, apellido: @newUser.apellido, ususario: @newUser.usuario, twitter: @newUser.twitter}, status: 200
         else
             render json: { error: 'La creación ha fallado' }, status: 500
         end
@@ -66,7 +67,7 @@ class UsuarioController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_usuario
-        @user = Usuario.find(params[:id])
+        @user = Usuario.select('id,nombre,apellido,usuario,twitter').find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
