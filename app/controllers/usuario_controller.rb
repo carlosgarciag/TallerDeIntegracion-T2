@@ -19,20 +19,28 @@ class UsuarioController < ApplicationController
   end
 
   def update
-    if(params.has_key?(:id))
-      render json: { error: 'id no es modificable' }, status: 400
-    else
-      if @user.update_attributes(usuario_params)
-        @user = Usuario.select('id, nombre, apellido, usuario, twitter').find(params[:id])
-        render json: @user, status: 200
+    
+    if @user = Usuario.select('id, nombre, apellido, usuario, twitter').find(params[:id])
+      body = JSON.parse request.body.read
+      if body["id"]
+        render json: { error: 'id no es modificable' }, status: 400
       else
-        case status
-        when 404
-          render json: { error: 'Usuario no encontrado' }, status: 404
-        when 500
-          render json: { error: 'La modificación ha fallado' }, status: 500
+        if body["usuario"]
+          @user.usuario = body["usuario"]
         end
+        if body["nombre"]
+          @user.nombre = body["nombre"]
+        end
+        if body["apellido"]
+          @user.apellido = body["apellido"]
+        end
+        if body["twitter"]
+          @user.twitter = body["twitter"]
+        end    
+        render json: @user, status: 200
       end
+    else
+      render json: { error: 'Usuario no encontrado' }, status: 404
     end
   end
 
@@ -43,7 +51,7 @@ class UsuarioController < ApplicationController
       if(params.has_key?(:usuario)&& params.has_key?(:nombre))
         @newUser = Usuario.new(usuario_params)
         if @newUser.save
-          render json: {id: @newUser.id, nombre: @newUser.nombre, apellido: @newUser.apellido, ususario: @newUser.usuario, twitter: @newUser.twitter}, status: 200
+          render json: {id: @newUser.id, nombre: @newUser.nombre, apellido: @newUser.apellido, usuario: @newUser.usuario, twitter: @newUser.twitter}, status: 201
         else
             render json: { error: 'La creación ha fallado' }, status: 500
         end
@@ -73,5 +81,9 @@ class UsuarioController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def usuario_params
       params.permit(:id,:nombre, :apellido, :usuario, :twitter)
+    end
+    
+    def usuario_edit_params
+      params.permit(:id, :nombre, :apellido, :usuario, :twitter)
     end
 end

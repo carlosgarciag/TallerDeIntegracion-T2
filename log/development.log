@@ -5507,3 +5507,2389 @@ Processing by UsuarioController#show as JSON
 Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-03-30 21:14:56 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 247ms (Views: 237.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuario" for 127.0.0.1 at 2017-03-30 21:15:05 -0300
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#index as JSON
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+[active_model_serializers]   [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT id,nombre,apellido,usuario,twitter FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.65ms)
+Completed 200 OK in 20ms (Views: 8.5ms | ActiveRecord: 6.5ms)
+
+
+Started PUT "/usuario?nombre=roberto&usuario=jota" for 127.0.0.1 at 2017-03-30 21:32:54 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"roberto", "usuario"=>"jota"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "jota"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 500 Internal Server Error in 19ms (Views: 0.9ms | ActiveRecord: 2.2ms)
+
+
+Started PUT "/usuario?nombre=roberto&usuario=jota" for 127.0.0.1 at 2017-03-30 21:33:00 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"roberto", "usuario"=>"jota"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "jota"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 500 Internal Server Error in 4ms (Views: 0.6ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/usuario?nombre=roberto&usuario=jota" for 127.0.0.1 at 2017-03-30 21:33:01 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"roberto", "usuario"=>"jota"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "jota"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 500 Internal Server Error in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-30 21:35:26 -0300
+Processing by WelcomeController#index as */*
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 43ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-30 21:49:51 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1", "usuario"=>{}}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Completed 404 Not Found in 15ms (Views: 4.5ms | ActiveRecord: 3.5ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 21:50:11 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 00:50:11 UTC], ["updated_at", 2017-03-31 00:50:11 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 200 OK in 23ms (Views: 1.0ms | ActiveRecord: 3.3ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 21:51:00 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 500 Internal Server Error in 32ms (Views: 3.3ms | ActiveRecord: 5.0ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 21:51:03 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 500 Internal Server Error in 4ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 21:51:09 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 500 Internal Server Error in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 21:51:20 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"id"=>1, "nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 400 Bad Request in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 21:51:37 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 500 Internal Server Error in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 21:51:51 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 500 Internal Server Error in 30ms (Views: 3.2ms | ActiveRecord: 4.8ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 21:51:52 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 500 Internal Server Error in 7ms (Views: 0.9ms | ActiveRecord: 2.1ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 21:51:52 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 500 Internal Server Error in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 21:51:52 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 500 Internal Server Error in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-30 21:51:56 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1", "usuario"=>{}}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 404 Not Found in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-30 21:51:57 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1", "usuario"=>{}}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-30 21:51:57 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1", "usuario"=>{}}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-30 21:52:27 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1", "usuario"=>{}}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 21:53:31 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 500 Internal Server Error in 29ms (Views: 3.1ms | ActiveRecord: 4.0ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 21:53:54 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 500 Internal Server Error in 4ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-30 21:54:08 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 238ms (Views: 237.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuario" for 127.0.0.1 at 2017-03-30 21:54:13 -0300
+Processing by UsuarioController#index as JSON
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+[active_model_serializers]   [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT id,nombre,apellido,usuario,twitter FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.72ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (105.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_development"[0m
+  [1m[35m (104.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_test"[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3276943859167566735);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsuarios (20170325203009)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "usuarios" ("id" serial primary key, "usuario" character varying, "nombre" character varying, "apellido" character varying, "twitter" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170325203009"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-31 00:54:42 UTC], ["updated_at", 2017-03-31 00:54:42 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3276943859167566735)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/usuario" for 127.0.0.1 at 2017-03-30 21:54:57 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#index as JSON
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+[active_model_serializers]   [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT id,nombre,apellido,usuario,twitter FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.01ms)
+Completed 200 OK in 17ms (Views: 4.0ms | ActiveRecord: 1.6ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 21:55:10 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 00:55:10 UTC], ["updated_at", 2017-03-31 00:55:10 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 24ms (Views: 0.6ms | ActiveRecord: 6.7ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (105.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_development"[0m
+  [1m[35m (106.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_test"[0m
+  [1m[35m (305.5ms)[0m  [1m[35mCREATE DATABASE "myApi_development" ENCODING = 'unicode'[0m
+  [1m[35m (302.3ms)[0m  [1m[35mCREATE DATABASE "myApi_test" ENCODING = 'unicode'[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3276943859167566735);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsuarios (20170325203009)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "usuarios" ("id" serial primary key, "usuario" character varying, "nombre" character varying, "apellido" character varying, "twitter" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170325203009"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-31 00:55:35 UTC], ["updated_at", 2017-03-31 00:55:35 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3276943859167566735)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 21:55:43 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 00:55:43 UTC], ["updated_at", 2017-03-31 00:55:43 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 201 Created in 33ms (Views: 3.8ms | ActiveRecord: 6.0ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 21:55:53 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"id"=>1, "nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 400 Bad Request in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuario" for 127.0.0.1 at 2017-03-30 21:56:15 -0300
+Processing by UsuarioController#index as JSON
+  Parameters: {"usuario"=>{}}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+[active_model_serializers]   [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT id,nombre,apellido,usuario,twitter FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.94ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-30 21:56:33 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/98765432" for 127.0.0.1 at 2017-03-30 21:56:41 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 21:56:50 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 400 Bad Request in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/usuario/98765432" for 127.0.0.1 at 2017-03-30 21:57:02 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 21:57:09 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 400 Bad Request in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/usuario/1" for 127.0.0.1 at 2017-03-30 21:57:19 -0300
+Processing by UsuarioController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "usuarios" WHERE "usuarios"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 3ms (ActiveRecord: 1.4ms)
+
+
+Started DELETE "/usuario/987652" for 127.0.0.1 at 2017-03-30 21:57:27 -0300
+Processing by UsuarioController#destroy as */*
+  Parameters: {"id"=>"987652"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 987652], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 22:05:15 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"id"=>1, "nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 400 Bad Request in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 22:05:24 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 01:05:24 UTC], ["updated_at", 2017-03-31 01:05:24 UTC]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 201 Created in 10ms (Views: 0.7ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:08:54 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 20ms (Views: 3.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/usuario" for 127.0.0.1 at 2017-03-30 22:08:58 -0300
+Processing by UsuarioController#index as JSON
+  Parameters: {"usuario"=>{}}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+[active_model_serializers]   [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT id,nombre,apellido,usuario,twitter FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.7ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 1.8ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 22:09:01 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"id"=>1, "nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 400 Bad Request in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 22:09:06 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 500 Internal Server Error in 15ms (Views: 1.0ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (105.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_development"[0m
+  [1m[35m (104.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_test"[0m
+  [1m[35m (301.4ms)[0m  [1m[35mCREATE DATABASE "myApi_development" ENCODING = 'unicode'[0m
+  [1m[35m (297.4ms)[0m  [1m[35mCREATE DATABASE "myApi_test" ENCODING = 'unicode'[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3276943859167566735);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsuarios (20170325203009)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "usuarios" ("id" serial primary key, "usuario" character varying, "nombre" character varying, "apellido" character varying, "twitter" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170325203009"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-31 01:09:45 UTC], ["updated_at", 2017-03-31 01:09:45 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3276943859167566735)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 22:09:52 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 01:09:52 UTC], ["updated_at", 2017-03-31 01:09:52 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 201 Created in 31ms (Views: 3.9ms | ActiveRecord: 5.5ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 22:09:57 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"id"=>1, "nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 400 Bad Request in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuario" for 127.0.0.1 at 2017-03-30 22:10:00 -0300
+Processing by UsuarioController#index as JSON
+  Parameters: {"usuario"=>{}}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+[active_model_serializers]   [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT id,nombre,apellido,usuario,twitter FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.94ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-30 22:10:03 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/98765432" for 127.0.0.1 at 2017-03-30 22:10:06 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:10:10 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["usuario", "ji"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:10:55 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["usuario", "ji"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.25ms)
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:10:56 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["usuario", "ji"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.24ms)
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/usuario/98765432" for 127.0.0.1 at 2017-03-30 22:11:22 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:11:25 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["usuario", "ji"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/usuario/1" for 127.0.0.1 at 2017-03-30 22:11:42 -0300
+Processing by UsuarioController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "usuarios" WHERE "usuarios"."id" = $1[0m  [["id", 1]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 7ms (ActiveRecord: 5.2ms)
+
+
+Started DELETE "/usuario/987652" for 127.0.0.1 at 2017-03-30 22:11:45 -0300
+Processing by UsuarioController#destroy as */*
+  Parameters: {"id"=>"987652"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 987652], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (105.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_development"[0m
+  [1m[35m (105.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_test"[0m
+  [1m[35m (299.0ms)[0m  [1m[35mCREATE DATABASE "myApi_development" ENCODING = 'unicode'[0m
+  [1m[35m (308.6ms)[0m  [1m[35mCREATE DATABASE "myApi_test" ENCODING = 'unicode'[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (15.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3276943859167566735);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsuarios (20170325203009)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.2ms)[0m  [1m[35mCREATE TABLE "usuarios" ("id" serial primary key, "usuario" character varying, "nombre" character varying, "apellido" character varying, "twitter" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170325203009"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-31 01:14:48 UTC], ["updated_at", 2017-03-31 01:14:48 UTC]]
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3276943859167566735)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:14:54 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 404 Not Found in 20ms (Views: 3.9ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:14:56 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/usuario/98765432" for 127.0.0.1 at 2017-03-30 22:14:59 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:15:03 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/usuario/98765432" for 127.0.0.1 at 2017-03-30 22:15:06 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:15:08 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 404 Not Found in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (105.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_development"[0m
+  [1m[35m (105.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_test"[0m
+  [1m[35m (308.4ms)[0m  [1m[35mCREATE DATABASE "myApi_development" ENCODING = 'unicode'[0m
+  [1m[35m (317.5ms)[0m  [1m[35mCREATE DATABASE "myApi_test" ENCODING = 'unicode'[0m
+  [1m[35m (45.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3276943859167566735);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsuarios (20170325203009)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE TABLE "usuarios" ("id" serial primary key, "usuario" character varying, "nombre" character varying, "apellido" character varying, "twitter" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170325203009"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-31 01:16:12 UTC], ["updated_at", 2017-03-31 01:16:12 UTC]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3276943859167566735)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:16:20 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 20ms (Views: 3.5ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:16:21 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 404 Not Found in 4ms (Views: 0.7ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 22:16:26 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 01:16:27 UTC], ["updated_at", 2017-03-31 01:16:27 UTC]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 201 Created in 23ms (Views: 0.7ms | ActiveRecord: 7.9ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 22:16:29 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"id"=>1, "nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 400 Bad Request in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuario" for 127.0.0.1 at 2017-03-30 22:16:32 -0300
+Processing by UsuarioController#index as JSON
+  Parameters: {"usuario"=>{}}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+[active_model_serializers]   [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT id,nombre,apellido,usuario,twitter FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.74ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-30 22:16:34 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/98765432" for 127.0.0.1 at 2017-03-30 22:16:36 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:16:39 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["usuario", "ji"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/usuario/98765432" for 127.0.0.1 at 2017-03-30 22:16:43 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:16:46 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["usuario", "ji"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/usuario/1" for 127.0.0.1 at 2017-03-30 22:16:50 -0300
+Processing by UsuarioController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "usuarios" WHERE "usuarios"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 3ms (ActiveRecord: 1.3ms)
+
+
+Started DELETE "/usuario/987652" for 127.0.0.1 at 2017-03-30 22:16:52 -0300
+Processing by UsuarioController#destroy as */*
+  Parameters: {"id"=>"987652"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 987652], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:20:10 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 22ms (Views: 4.7ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/usuario/98765432" for 127.0.0.1 at 2017-03-30 22:20:16 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 404 Not Found in 3ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:20:19 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:20:22 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 404 Not Found in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:20:23 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:20:23 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/98765432" for 127.0.0.1 at 2017-03-30 22:20:25 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 22:20:27 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 01:20:27 UTC], ["updated_at", 2017-03-31 01:20:27 UTC]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 201 Created in 22ms (Views: 0.6ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:20:33 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 404 Not Found in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (105.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_development"[0m
+  [1m[35m (105.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_test"[0m
+  [1m[35m (297.2ms)[0m  [1m[35mCREATE DATABASE "myApi_development" ENCODING = 'unicode'[0m
+  [1m[35m (319.3ms)[0m  [1m[35mCREATE DATABASE "myApi_test" ENCODING = 'unicode'[0m
+  [1m[35m (37.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (32.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3276943859167566735);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsuarios (20170325203009)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE TABLE "usuarios" ("id" serial primary key, "usuario" character varying, "nombre" character varying, "apellido" character varying, "twitter" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170325203009"]]
+  [1m[35m (10.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-31 01:32:56 UTC], ["updated_at", 2017-03-31 01:32:56 UTC]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3276943859167566735)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 22:33:13 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:32: syntax error, unexpected keyword_else, expecting keyword_end
+/home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:79: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/usuario_controller.rb:32: syntax error, unexpected keyword_else, expecting keyword_end
+app/controllers/usuario_controller.rb:79: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.1ms)
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (105.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_development"[0m
+  [1m[35m (104.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_test"[0m
+  [1m[35m (296.7ms)[0m  [1m[35mCREATE DATABASE "myApi_development" ENCODING = 'unicode'[0m
+  [1m[35m (302.8ms)[0m  [1m[35mCREATE DATABASE "myApi_test" ENCODING = 'unicode'[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3276943859167566735);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsuarios (20170325203009)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "usuarios" ("id" serial primary key, "usuario" character varying, "nombre" character varying, "apellido" character varying, "twitter" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170325203009"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-31 01:34:41 UTC], ["updated_at", 2017-03-31 01:34:41 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3276943859167566735)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 22:34:49 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 01:34:50 UTC], ["updated_at", 2017-03-31 01:34:50 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 201 Created in 34ms (Views: 7.5ms | ActiveRecord: 5.6ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 22:34:53 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"id"=>1, "nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 400 Bad Request in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuario" for 127.0.0.1 at 2017-03-30 22:34:55 -0300
+Processing by UsuarioController#index as JSON
+  Parameters: {"usuario"=>{}}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+[active_model_serializers]   [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT id,nombre,apellido,usuario,twitter FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.12ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-30 22:34:58 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/98765432" for 127.0.0.1 at 2017-03-30 22:35:00 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:35:03 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["usuario", "ji"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/usuario/98765432" for 127.0.0.1 at 2017-03-30 22:35:06 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 22:35:09 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["usuario", "ji"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/usuario/1" for 127.0.0.1 at 2017-03-30 22:35:15 -0300
+Processing by UsuarioController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "usuarios" WHERE "usuarios"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 3ms (ActiveRecord: 1.3ms)
+
+
+Started DELETE "/usuario/987652" for 127.0.0.1 at 2017-03-30 22:35:17 -0300
+Processing by UsuarioController#destroy as */*
+  Parameters: {"id"=>"987652"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 987652], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 404 Not Found in 8ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 23:31:14 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 22ms (Views: 3.2ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 23:31:21 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 404 Not Found in 4ms (Views: 1.7ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 23:31:25 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 02:31:25 UTC], ["updated_at", 2017-03-31 02:31:25 UTC]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 201 Created in 19ms (Views: 0.7ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 23:31:30 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/usuario/98765432" for 127.0.0.1 at 2017-03-30 23:31:34 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 23:31:37 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 23:31:40 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 404 Not Found in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (105.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_development"[0m
+  [1m[35m (104.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_test"[0m
+  [1m[35m (299.6ms)[0m  [1m[35mCREATE DATABASE "myApi_development" ENCODING = 'unicode'[0m
+  [1m[35m (303.8ms)[0m  [1m[35mCREATE DATABASE "myApi_test" ENCODING = 'unicode'[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3276943859167566735);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsuarios (20170325203009)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "usuarios" ("id" serial primary key, "usuario" character varying, "nombre" character varying, "apellido" character varying, "twitter" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170325203009"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-31 02:33:08 UTC], ["updated_at", 2017-03-31 02:33:08 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3276943859167566735)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 23:33:17 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 02:33:17 UTC], ["updated_at", 2017-03-31 02:33:17 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 201 Created in 30ms (Views: 3.8ms | ActiveRecord: 5.0ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 23:33:20 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"id"=>1, "nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 400 Bad Request in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuario" for 127.0.0.1 at 2017-03-30 23:33:23 -0300
+Processing by UsuarioController#index as JSON
+  Parameters: {"usuario"=>{}}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+[active_model_serializers]   [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT id,nombre,apellido,usuario,twitter FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.11ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-30 23:33:33 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.61ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/98765432" for 127.0.0.1 at 2017-03-30 23:33:37 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 23:34:18 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["usuario", "ji"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.21ms)
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/usuario/1?usuario=roberto" for 127.0.0.1 at 2017-03-30 23:35:34 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"usuario"=>"roberto", "id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/1?usuario=roberto" for 127.0.0.1 at 2017-03-30 23:35:39 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"usuario"=>"roberto", "id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.16ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/1?usuario=roberto" for 127.0.0.1 at 2017-03-30 23:36:04 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#show as JSON
+  Parameters: {"usuario"=>"roberto", "id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 28ms (Views: 9.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/usuario/1?usuario=roberto" for 127.0.0.1 at 2017-03-30 23:36:06 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"usuario"=>"roberto", "id"=>"1"}
+  [1m[36mUsuario Load (2.7ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 23:44:38 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:36: syntax error, unexpected keyword_else, expecting keyword_end
+/home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/usuario_controller.rb:36: syntax error, unexpected keyword_else, expecting keyword_end
+app/controllers/usuario_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.1ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.7ms)
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.8ms)
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 23:46:16 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["usuario", "ji"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsuarioController#update, rendering head :no_content
+Completed 204 No Content in 41ms (ActiveRecord: 4.2ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 23:46:20 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["usuario", "ji"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsuarioController#update, rendering head :no_content
+Completed 204 No Content in 23ms (ActiveRecord: 1.9ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 23:48:11 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:85: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/usuario_controller.rb:85: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.4ms)
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.7ms)
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 23:49:09 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["usuario", "ji"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 34ms (Views: 3.7ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 23:49:12 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["usuario", "ji"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 404 Not Found in 8ms (Views: 0.7ms | ActiveRecord: 1.9ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 23:49:17 -0300
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for UsuarioController):
+  
+actionpack (5.0.2) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.2) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (4.0ms)
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 23:50:01 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/usuario_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (1.9ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.3ms)
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.4ms)
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 23:51:15 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:41: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/usuario_controller.rb:41: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.8ms)
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.9ms)
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 23:51:42 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:84: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/usuario_controller.rb:84: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.7ms)
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (105.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_development"[0m
+  [1m[35m (105.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_test"[0m
+  [1m[35m (298.8ms)[0m  [1m[35mCREATE DATABASE "myApi_development" ENCODING = 'unicode'[0m
+  [1m[35m (306.6ms)[0m  [1m[35mCREATE DATABASE "myApi_test" ENCODING = 'unicode'[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3276943859167566735);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsuarios (20170325203009)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "usuarios" ("id" serial primary key, "usuario" character varying, "nombre" character varying, "apellido" character varying, "twitter" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170325203009"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-31 02:52:23 UTC], ["updated_at", 2017-03-31 02:52:23 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3276943859167566735)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 23:52:29 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 02:52:29 UTC], ["updated_at", 2017-03-31 02:52:29 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 201 Created in 30ms (Views: 3.9ms | ActiveRecord: 5.4ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 23:52:32 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"id"=>1, "nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 400 Bad Request in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuario" for 127.0.0.1 at 2017-03-30 23:52:35 -0300
+Processing by UsuarioController#index as JSON
+  Parameters: {"usuario"=>{}}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+[active_model_serializers]   [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT id,nombre,apellido,usuario,twitter FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.14ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-30 23:52:37 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/98765432" for 127.0.0.1 at 2017-03-30 23:52:40 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/usuario/1" for 127.0.0.1 at 2017-03-30 23:52:43 -0300
+Processing by UsuarioController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "usuarios" WHERE "usuarios"."id" = $1[0m  [["id", 1]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 8ms (ActiveRecord: 5.4ms)
+
+
+Started DELETE "/usuario/987652" for 127.0.0.1 at 2017-03-30 23:52:46 -0300
+Processing by UsuarioController#destroy as */*
+  Parameters: {"id"=>"987652"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 987652], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-30 23:52:49 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 02:52:49 UTC], ["updated_at", 2017-03-31 02:52:49 UTC]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 201 Created in 8ms (Views: 0.5ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 23:52:52 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 404 Not Found in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-30 23:52:55 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 404 Not Found in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/usuario/98765432" for 127.0.0.1 at 2017-03-30 23:52:58 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 8ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:00:20 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 404 Not Found in 23ms (Views: 4.3ms | ActiveRecord: 4.6ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:00:28 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 500 Internal Server Error in 28ms (Views: 0.7ms | ActiveRecord: 2.6ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:04:20 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 500 Internal Server Error in 31ms (Views: 3.3ms | ActiveRecord: 3.9ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:04:25 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 500 Internal Server Error in 7ms (Views: 0.8ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:04:29 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"id"=>1, "nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 400 Bad Request in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:04:34 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 500 Internal Server Error in 4ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario" for 127.0.0.1 at 2017-03-31 00:04:37 -0300
+Processing by UsuarioController#index as JSON
+  Parameters: {"usuario"=>{}}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+[active_model_serializers]   [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT id,nombre,apellido,usuario,twitter FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.95ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-31 00:04:40 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (105.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_development"[0m
+  [1m[35m (104.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_test"[0m
+  [1m[35m (408.4ms)[0m  [1m[35mCREATE DATABASE "myApi_development" ENCODING = 'unicode'[0m
+  [1m[35m (299.2ms)[0m  [1m[35mCREATE DATABASE "myApi_test" ENCODING = 'unicode'[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3276943859167566735);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsuarios (20170325203009)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "usuarios" ("id" serial primary key, "usuario" character varying, "nombre" character varying, "apellido" character varying, "twitter" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170325203009"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-31 03:04:59 UTC], ["updated_at", 2017-03-31 03:04:59 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3276943859167566735)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:05:04 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 03:05:04 UTC], ["updated_at", 2017-03-31 03:05:04 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 201 Created in 29ms (Views: 3.7ms | ActiveRecord: 5.4ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:05:08 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"id"=>1, "nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 400 Bad Request in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuario" for 127.0.0.1 at 2017-03-31 00:05:10 -0300
+Processing by UsuarioController#index as JSON
+  Parameters: {"usuario"=>{}}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+[active_model_serializers]   [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT id,nombre,apellido,usuario,twitter FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.42ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-31 00:05:13 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/98765432" for 127.0.0.1 at 2017-03-31 00:05:15 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 404 Not Found in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:05:17 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["usuario", "ji"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.19ms)
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/usuario/98765432" for 127.0.0.1 at 2017-03-31 00:05:21 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:05:23 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["usuario", "ji"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.25ms)
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:15:25 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" IS NULL AND ("usuarios"."id" != $1) LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+No template found for UsuarioController#update, rendering head :no_content
+Completed 204 No Content in 44ms (ActiveRecord: 4.5ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:15:28 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 500 Internal Server Error in 11ms (Views: 4.9ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (105.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_development"[0m
+  [1m[35m (105.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_test"[0m
+  [1m[35m (313.9ms)[0m  [1m[35mCREATE DATABASE "myApi_development" ENCODING = 'unicode'[0m
+  [1m[35m (300.2ms)[0m  [1m[35mCREATE DATABASE "myApi_test" ENCODING = 'unicode'[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3276943859167566735);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsuarios (20170325203009)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "usuarios" ("id" serial primary key, "usuario" character varying, "nombre" character varying, "apellido" character varying, "twitter" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170325203009"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-31 03:15:35 UTC], ["updated_at", 2017-03-31 03:15:35 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3276943859167566735)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:15:39 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 03:15:40 UTC], ["updated_at", 2017-03-31 03:15:40 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 201 Created in 29ms (Views: 3.7ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:15:44 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (1.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" IS NULL AND ("usuarios"."id" != $1) LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.4ms)[0m  [1m[31mROLLBACK[0m
+No template found for UsuarioController#update, rendering head :no_content
+Completed 204 No Content in 33ms (ActiveRecord: 4.6ms)
+
+
+Started POST "/usuario/98765432" for 127.0.0.1 at 2017-03-31 00:15:47 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.36ms)
+Completed 404 Not Found in 5ms (Views: 1.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:15:50 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+JSON::ParserError (784: unexpected token at '{
+    "id": 500,
+}'):
+  
+app/controllers/usuario_controller.rb:25:in `update'
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.3ms)
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:19:20 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 200 OK in 29ms (Views: 6.7ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:19:50 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+JSON::ParserError (784: unexpected token at '{
+    "id": 500,
+}'):
+  
+app/controllers/usuario_controller.rb:24:in `update'
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.5ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.4ms)
+Started POST "/usuario/98765432" for 127.0.0.1 at 2017-03-31 00:19:53 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 404 Not Found in 6ms (Views: 4.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:19:56 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (105.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_development"[0m
+  [1m[35m (104.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_test"[0m
+  [1m[35m (316.8ms)[0m  [1m[35mCREATE DATABASE "myApi_development" ENCODING = 'unicode'[0m
+  [1m[35m (310.8ms)[0m  [1m[35mCREATE DATABASE "myApi_test" ENCODING = 'unicode'[0m
+  [1m[35m (34.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3276943859167566735);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsuarios (20170325203009)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "usuarios" ("id" serial primary key, "usuario" character varying, "nombre" character varying, "apellido" character varying, "twitter" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170325203009"]]
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-31 03:21:22 UTC], ["updated_at", 2017-03-31 03:21:22 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3276943859167566735)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:21:30 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/usuario_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.1ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.0ms)
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.5ms)
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:22:14 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 03:22:15 UTC], ["updated_at", 2017-03-31 03:22:15 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Completed 201 Created in 30ms (Views: 4.1ms | ActiveRecord: 4.4ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:22:18 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"id"=>1, "nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 400 Bad Request in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuario" for 127.0.0.1 at 2017-03-31 00:22:20 -0300
+Processing by UsuarioController#index as JSON
+  Parameters: {"usuario"=>{}}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+[active_model_serializers]   [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT id,nombre,apellido,usuario,twitter FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.43ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-31 00:22:23 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/98765432" for 127.0.0.1 at 2017-03-31 00:22:25 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:22:28 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:22:34 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+JSON::ParserError (784: unexpected token at '{
+    "id": 500,
+}'):
+  
+app/controllers/usuario_controller.rb:24:in `update'
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (105.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_development"[0m
+  [1m[35m (105.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_test"[0m
+  [1m[35m (315.9ms)[0m  [1m[35mCREATE DATABASE "myApi_development" ENCODING = 'unicode'[0m
+  [1m[35m (309.3ms)[0m  [1m[35mCREATE DATABASE "myApi_test" ENCODING = 'unicode'[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3276943859167566735);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsuarios (20170325203009)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "usuarios" ("id" serial primary key, "usuario" character varying, "nombre" character varying, "apellido" character varying, "twitter" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170325203009"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-31 03:25:01 UTC], ["updated_at", 2017-03-31 03:25:01 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3276943859167566735)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:25:08 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 03:25:08 UTC], ["updated_at", 2017-03-31 03:25:08 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 201 Created in 33ms (Views: 4.1ms | ActiveRecord: 5.6ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:25:10 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"id"=>1, "nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 400 Bad Request in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuario" for 127.0.0.1 at 2017-03-31 00:25:12 -0300
+Processing by UsuarioController#index as JSON
+  Parameters: {"usuario"=>{}}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+[active_model_serializers]   [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT id,nombre,apellido,usuario,twitter FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.15ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-31 00:25:14 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/98765432" for 127.0.0.1 at 2017-03-31 00:25:16 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:25:19 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.19ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/usuario/98765432" for 127.0.0.1 at 2017-03-31 00:25:22 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:25:25 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+JSON::ParserError (784: unexpected token at '{
+    "id": 500,
+}'):
+  
+app/controllers/usuario_controller.rb:24:in `update'
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (111.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_development"[0m
+  [1m[35m (105.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_test"[0m
+  [1m[35m (301.5ms)[0m  [1m[35mCREATE DATABASE "myApi_development" ENCODING = 'unicode'[0m
+  [1m[35m (294.4ms)[0m  [1m[35mCREATE DATABASE "myApi_test" ENCODING = 'unicode'[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3276943859167566735);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsuarios (20170325203009)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "usuarios" ("id" serial primary key, "usuario" character varying, "nombre" character varying, "apellido" character varying, "twitter" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170325203009"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-31 03:34:05 UTC], ["updated_at", 2017-03-31 03:34:05 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3276943859167566735)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:34:24 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:24: syntax error, unexpected tIDENTIFIER, expecting keyword_then or ';' or '\n'
+      if body = JSON.parse request.body.read      
+                                  ^
+/home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:88: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/usuario_controller.rb:24: syntax error, unexpected tIDENTIFIER, expecting keyword_then or ';' or '\n'
+app/controllers/usuario_controller.rb:88: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.0ms)
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.1ms)
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:35:10 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 03:35:11 UTC], ["updated_at", 2017-03-31 03:35:11 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 201 Created in 45ms (Views: 4.5ms | ActiveRecord: 6.6ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:35:19 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"id"=>1, "nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 400 Bad Request in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuario" for 127.0.0.1 at 2017-03-31 00:35:21 -0300
+Processing by UsuarioController#index as JSON
+  Parameters: {"usuario"=>{}}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+[active_model_serializers]   [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT id,nombre,apellido,usuario,twitter FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.93ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-31 00:35:24 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/98765432" for 127.0.0.1 at 2017-03-31 00:35:26 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:35:28 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.5ms)
+
+
+  
+JSON::ParserError (A JSON text must at least contain two octets!):
+  
+app/controllers/usuario_controller.rb:25:in `update'
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.4ms)
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:36:53 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 28ms (Views: 8.0ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/usuario/98765432" for 127.0.0.1 at 2017-03-31 00:36:57 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 404 Not Found in 8ms (Views: 5.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:36:59 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+JSON::ParserError (784: unexpected token at '{
+    "id": 500,
+}'):
+  
+app/controllers/usuario_controller.rb:24:in `update'
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/carlos/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.4ms)
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:39:34 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 400 Bad Request in 3ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:39:37 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 400 Bad Request in 4ms (Views: 0.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:39:39 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 400 Bad Request in 15ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/usuario/1" for 127.0.0.1 at 2017-03-31 00:39:49 -0300
+Processing by UsuarioController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "usuarios" WHERE "usuarios"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 4ms (ActiveRecord: 1.6ms)
+
+
+Started DELETE "/usuario/987652" for 127.0.0.1 at 2017-03-31 00:39:52 -0300
+Processing by UsuarioController#destroy as */*
+  Parameters: {"id"=>"987652"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 987652], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (105.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_development"[0m
+  [1m[35m (105.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myApi_test"[0m
+  [1m[35m (307.9ms)[0m  [1m[35mCREATE DATABASE "myApi_development" ENCODING = 'unicode'[0m
+  [1m[35m (311.0ms)[0m  [1m[35mCREATE DATABASE "myApi_test" ENCODING = 'unicode'[0m
+  [1m[35m (17.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3276943859167566735);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsuarios (20170325203009)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE "usuarios" ("id" serial primary key, "usuario" character varying, "nombre" character varying, "apellido" character varying, "twitter" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170325203009"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-31 03:40:41 UTC], ["updated_at", 2017-03-31 03:40:41 UTC]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3276943859167566735)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:40:49 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsuarioController> at /home/carlos/TallerDeIntegracion-T2/app/controllers/usuario_controller.rb:3)
+Processing by UsuarioController#create as */*
+  Parameters: {"nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."usuario" = $1 LIMIT $2[0m  [["usuario", "ji"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("usuario", "nombre", "apellido", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["usuario", "ji"], ["nombre", "Juan"], ["apellido", "Integrador"], ["created_at", 2017-03-31 03:40:50 UTC], ["updated_at", 2017-03-31 03:40:50 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 201 Created in 33ms (Views: 5.1ms | ActiveRecord: 5.2ms)
+
+
+Started PUT "/usuario" for 127.0.0.1 at 2017-03-31 00:40:52 -0300
+Processing by UsuarioController#create as */*
+  Parameters: {"id"=>1, "nombre"=>"Juan", "apellido"=>"Integrador", "usuario"=>"ji", "twitter"=>nil}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 400 Bad Request in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuario" for 127.0.0.1 at 2017-03-31 00:40:54 -0300
+Processing by UsuarioController#index as JSON
+  Parameters: {"usuario"=>{}}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+[active_model_serializers]   [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT id,nombre,apellido,usuario,twitter FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.07ms)
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/usuario/1" for 127.0.0.1 at 2017-03-31 00:40:57 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.63ms)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/98765432" for 127.0.0.1 at 2017-03-31 00:40:59 -0300
+Processing by UsuarioController#show as JSON
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:41:01 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/usuario/98765432" for 127.0.0.1 at 2017-03-31 00:41:04 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"98765432"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 98765432], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/1" for 127.0.0.1 at 2017-03-31 00:41:06 -0300
+Processing by UsuarioController#update as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  id, nombre, apellido, usuario, twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 400 Bad Request in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/usuario/1" for 127.0.0.1 at 2017-03-31 00:41:09 -0300
+Processing by UsuarioController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "usuarios" WHERE "usuarios"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 3ms (ActiveRecord: 1.4ms)
+
+
+Started DELETE "/usuario/987652" for 127.0.0.1 at 2017-03-31 00:41:12 -0300
+Processing by UsuarioController#destroy as */*
+  Parameters: {"id"=>"987652"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  id,nombre,apellido,usuario,twitter FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 987652], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
